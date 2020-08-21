@@ -1,0 +1,34 @@
+{
+    "name": "backend-exercise",
+    "version": "1.0.1",
+    "description": "Project backend",
+    "main": "server.js",
+    "scripts": {
+        "server": "nodemon server.js",
+        "client": "npm start --prefix client",
+        "dev": "concurrently \"npm run server\" \"npm run client\""
+    },
+    "keywords": [
+        "mern",
+        "react.js",
+        "node.js",
+        "express.js"
+    ],
+    "author": "sakil amhmud",
+    "license": "MIT",
+    "dependencies": {
+        "bcryptjs": "^2.4.3",
+        "body-parser": "^1.19.0",
+        "express": "^4.17.1",
+        "gravatar": "^1.8.0",
+        "jsonwebtoken": "^8.5.1",
+        "mongoose": "^5.9.19",
+        "morgan": "^1.10.0",
+        "passport": "^0.4.1",
+        "passport-jwt": "^4.0.0",
+        "validator": "^13.1.1"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.4"
+    }
+}
