@@ -10,11 +10,13 @@ import Footer from './components/layout/Footer';
 import Landing from './components/layout/Landing';
 import Register from './components/auth/Register';
 import Login from './components/auth/Login';
+import Dashboard from './components/dashboard/Dashboard';
 
 import store from './store';
 
 import setAuthToken from './utils/setAuthToken ';
 import { setCurrentUser, logoutUser } from './actions/authAction';
+import { clearCurrentProfile } from './actions/profileAction';
 
 if (localStorage.jwtToken) {
     setAuthToken(localStorage.jwtToken);
@@ -24,6 +26,7 @@ if (localStorage.jwtToken) {
 
     if (decoded.exp < currenTime) {
         store.dispatch(logoutUser());
+        store.dispatch(clearCurrentProfile());
         window.location.href = '/login';
     }
 }
@@ -38,6 +41,7 @@ function App() {
                     <div>
                         <Route exact path='/register' component={Register} />
                         <Route exact path='/login' component={Login} />
+                        <Route exact path='/dashboard' component={Dashboard} />
                     </div>
                     <Footer />
                 </div>
